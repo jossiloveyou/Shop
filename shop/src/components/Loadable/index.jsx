@@ -3,7 +3,7 @@ import Loadable from 'react-loadable'
 
 const Loading = () => <div>loading</div>
 
-export default function(loader,loading=Loading){
+export default function(loader, loading = Loading){
     return Loadable({
         loader,
         loading
