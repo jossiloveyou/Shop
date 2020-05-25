@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import './styles.less'
-export default class Reg extends Component {
+
+export default class My extends Component {
   render() {
     return (
       <div>
