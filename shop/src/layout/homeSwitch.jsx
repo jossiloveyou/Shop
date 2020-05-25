@@ -7,7 +7,7 @@ import './styles.less'
 export default class HomeSwitch extends Component {
   render() {
     return (
-      <>
+      <div className="hs-box">
         <Switch>
           <Route path="/home" component={Home}/>
           <Redirect to="/home"/>
@@ -32,7 +32,7 @@ export default class HomeSwitch extends Component {
             </NavLink>
           </li>
         </ul>
-      </>
+      </div>
     )
   }
 }

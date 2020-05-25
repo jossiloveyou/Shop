@@ -3,8 +3,8 @@ import './styles.less'
 export default class Home extends Component {
   render() {
     return (
-      <div>
-        
+      <div className="home-box">
+        <div className="home-fd"></div>
       </div>
     )
   }
