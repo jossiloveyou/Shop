@@ -28,6 +28,8 @@
 }
 .my .my-bod .my-name dd p {
   line-height: 0.4rem;
+  color: white;
+  font-size: 0.22rem;
 }
 .my .my-bod .my-order-form {
   width: 100%;
@@ -40,15 +42,21 @@
   padding: 0 0.2rem;
   box-sizing: border-box;
   display: flex;
-  border-bottom: 0.01rem solid #ccc;
+  border-bottom: 1px solid #EFEFEF;
   line-height: 0.6rem;
 }
 .my .my-bod .my-order-form p span:nth-child(1) {
   flex: 1;
+  font-size: 0.23rem;
 }
 .my .my-bod .my-order-form p span:nth-child(2) {
   width: 2rem;
   text-align: right;
+  font-size: 0.21rem;
+}
+.my .my-bod .my-order-form p span:nth-child(2) .anticon {
+  font-size: 0.23rem;
+  color: black !important;
 }
 .my .my-bod .my-order-form div {
   width: 100%;
@@ -69,10 +77,10 @@
   background: white;
 }
 .my .my-bod .my-msg p {
-  padding: 0 0.2rem 0 0.4rem;
+  padding: 0.1rem 0.2rem;
   box-sizing: border-box;
   font-size: 0.24rem;
-  border-bottom: 0.01rem solid #ccc;
+  border-bottom: 1px solid #EFEFEF;
   line-height: 0.6rem;
   display: flex;
 }
@@ -82,6 +90,13 @@
 .my .my-bod .my-msg p span:nth-child(2) {
   width: 0.6rem;
   text-align: right;
+  padding: 0;
+}
+.my .my-bod .my-msg p .anticon {
+  font-size: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .my .my-bod .my-but {
   width: 100%;
@@ -95,4 +110,5 @@
   background: #E51B19;
   border: none;
   border-radius: 0.05rem;
+  margin-top: 0.05rem;
 }
