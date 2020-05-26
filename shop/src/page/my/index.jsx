@@ -33,6 +33,9 @@ export default class My extends Component {
   onClick = () => {
     this.props.history.go(-1)
   }
+  logins = () => {
+    this.props.history.push('/login')
+  }
   render() {
     return (
       <div className="my">
@@ -73,7 +76,7 @@ export default class My extends Component {
             }
           </div>
           <div className="my-but">
-            <button>登录/注册</button>
+            <button onClick={this.logins}>登录/注册</button>
           </div>
         </div>
       </div>

@@ -5,7 +5,6 @@ export default class Header extends Component {
   
   render() {
     const { title, back } = this.props
-    console.log(back);
     return (
       <div className="head-box">
         <div onClick={back}><Icons icons="fanhui" /></div>
