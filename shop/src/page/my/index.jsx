@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import Header from '@@/Header'
+import { Header, Icons } from '@@'
 import myTu1 from '@/assets/my-tu1.png'
 import myTu2 from '@/assets/my-tu2.png'
 import myTu3 from '@/assets/my-tu3.png'
-import './styless.less'
 
+import './styless.less'
 const orderForm = [
   {
     img: myTu1,
@@ -21,12 +21,13 @@ const orderForm = [
   },
 ]
 
+
 const msg = [
-  {name: '个人资料',qita: '>',id: 1},
-  {name: '地址管理',qita: '>',id: 2},
-  {name: '绑定手机',qita: '>',id: 3},
-  {name: '修改密码',qita:'>',id: 4},
-  {name: '我的收藏',qita: '>',id: 5},
+  {name: '个人资料',qita: <Icons icons="youjiantou"/>,id: 1},
+  {name: '地址管理',qita: <Icons icons="youjiantou"/>,id: 2},
+  {name: '绑定手机',qita: <Icons icons="youjiantou"/>,id: 3},
+  {name: '修改密码',qita: <Icons icons="youjiantou"/>,id: 4},
+  {name: '我的收藏',qita: <Icons icons="youjiantou"/>,id: 5},
 ]
 
 export default class My extends Component {
@@ -51,7 +52,7 @@ export default class My extends Component {
           <div className="my-order-form">
             <p>
               <span>全部订单</span>
-              <span>查看全部订单></span>
+              <span>查看全部订单 <Icons icons="youjiantou"/></span>
             </p>
             <div>
               {
