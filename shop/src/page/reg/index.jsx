@@ -1,15 +1,71 @@
 import React, { Component } from 'react'
-import { Header } from '@@'
+import { Form, Input, Button } from 'antd';
+import { Header, Icons } from '@@'
+import api from '@/services/api'
 import './styles.less'
-export default class Reg extends Component {
+
+export default @Form.create()
+
+class Reg extends Component {
+
   back = () => {
     this.props.history.go(-1)
   }
+
+  handleSubmit = e => {
+    e.preventDefault();
+    this.props.form.validateFields((err, values) => {
+      if (!err) {
+        console.log('Received values of form: ', values)
+      }
+    })
+  }
+
   render() {
+    const { getFieldDecorator } = this.props.form
     return (
       <div className="reg-box">
         <Header title="注册" back={this.back}/>
-
+        <div className="reg-sr">
+          <Form onSubmit={this.handleSubmit} className="login-form">
+            <Form.Item>
+              {getFieldDecorator('vcode', {
+                rules: [{ required: true, message: '请输入手机号!' }],
+              })(
+                <Input 
+                  placeholder="验证码"
+                  prefix={<img src={api.vcode} alt=""/>}
+                />,
+              )}
+            </Form.Item>
+            <Form.Item>
+              {getFieldDecorator('cellphone', {
+                rules: [{ required: true, message: '请输入手机号!' }],
+              })(
+                <Input
+                  className="getCode" 
+                  placeholder="请输入手机号"
+                  prefix={<Icons icons="huoquyanzhengma"/>}
+                />,
+              )}
+            </Form.Item>
+            <Form.Item>
+              {getFieldDecorator('password', {
+                rules: [{ required: true, message: '请输入密码!' }],
+              })(
+                <Input.Password
+                  type="password"
+                  placeholder="密码"
+                />,
+              )}
+            </Form.Item>
+            <Form.Item>
+              <Button type="primary" htmlType="submit" className="login-form-button">
+                注册
+              </Button>
+            </Form.Item>
+          </Form>
+        </div>
       </div>
     )
   }

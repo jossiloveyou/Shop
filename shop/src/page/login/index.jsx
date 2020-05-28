@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, Input, Button } from 'antd';
+import { Form, Input, Button } from 'antd'
 import { Header, Icons } from '@@'
 import './styles.less'
 
@@ -25,7 +25,7 @@ class Login extends Component {
   render() {
     const { getFieldDecorator } = this.props.form
     return (
-      <div className="login-home">
+      <div className="login-box">
         <Header title="登录" back={this.back}/>
         <div className="login-sr">
           <Form onSubmit={this.handleSubmit} className="login-form">

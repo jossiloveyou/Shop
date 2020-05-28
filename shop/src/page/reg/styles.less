@@ -1,0 +1,44 @@
+.reg-box{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .reg-sr{
+    flex: 1;
+    padding: 0.25rem;
+    box-sizing: border-box;
+    .ant-input-affix-wrapper .ant-input:not(:first-child){
+      padding-left: 10px;
+    }
+    input{
+      border: 1px solid #efefef !important;
+    }
+    .getCode{
+      .ant-input-prefix{
+        left: 67% !important;
+      }
+      svg{
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+    .ant-input-affix-wrapper .ant-input-prefix{
+      left: 77%;
+    }
+    .ant-input{
+      border: none;
+      border: 1px solid #efefef !important;
+      box-shadow: none;
+    }
+    .ant-input-affix-wrapper .ant-input:focus {
+      border: none;
+      border: 1px solid #efefef !important;
+      box-shadow: none;
+    }
+    .ant-btn{
+      width: 100%;
+      background: red;
+      border: 1px solid red;
+      box-shadow: none;
+    }
+  }
+} 
