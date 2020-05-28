@@ -1,14 +1,14 @@
 import axios from 'axios'
 import qs from 'qs'
-import { store } from "@/store1";
+// import { store } from "@/store";
 
 // 添加请求拦截器
 axios.interceptors.request.use(config => {
-  const { token } = store.getState().form
-  console.log(token)
-  if(token){
-    config.data += `&token=${token}`
-  }
+  // const { token } = store.getState().form
+  // console.log(token)
+  // if(token){
+  //   config.data += `&token=${token}`
+  // }
   return config
 
 }, error => {

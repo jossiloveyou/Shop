@@ -6,6 +6,7 @@ import './styles.less'
 export default @Form.create()
 
 class Login extends Component {
+
   back = () => {//返回
     this.props.history.go(-1)
   }
@@ -29,7 +30,7 @@ class Login extends Component {
         <div className="login-sr">
           <Form onSubmit={this.handleSubmit} className="login-form">
             <Form.Item>
-              {getFieldDecorator('username', {
+              {getFieldDecorator('cellphone', {
                 rules: [{ required: true, message: '请输入手机号!' }],
               })(
                   <Input 

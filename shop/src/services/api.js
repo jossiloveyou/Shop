@@ -1,5 +1,4 @@
 export default {
-  listwidthpage:'/api/Home/Apis/listWithPage',
-  sampleLogin: '/apa/Home/Apis/sampleLogin',
-  sampleList: '/apa/Home/Apis/sampleList',
+  vcode: '/aps/api/vcode/chkcode?token=1ec949a15fb709370f',//验证码
+  login: '/aps/api/home/user/pwdlogin?token=1ec949a15fb709370fn',//登录
 }
