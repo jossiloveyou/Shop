@@ -30,7 +30,7 @@ class Reg extends Component {
           <Form onSubmit={this.handleSubmit} className="login-form">
             <Form.Item>
               {getFieldDecorator('vcode', {
-                rules: [{ required: true, message: '请输入手机号!' }],
+                rules: [{ required: true, message: '请输入验证码!' }],
               })(
                 <Input 
                   placeholder="验证码"

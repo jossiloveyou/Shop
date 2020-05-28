@@ -1,9 +1,15 @@
 import React, { Component } from 'react'
 import { Form, Input, Button } from 'antd'
+import { connect } from 'react-redux'
 import { Header, Icons } from '@@'
+import { memberLogin } from '@/actions/login'
 import './styles.less'
 
-export default @Form.create()
+export default @connect(state => ({
+}),{
+  memberLogin,
+})
+@Form.create()
 
 class Login extends Component {
 
@@ -17,7 +23,8 @@ class Login extends Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        console.log('Received values of form: ', values)
+        const { memberLogin } = this.props
+        memberLogin(values)
       }
     })
   }
