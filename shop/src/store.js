@@ -21,7 +21,7 @@ const myPersistReducer = persistReducer(
 )
 const store = createStore(
   myPersistReducer,
-  composeEnhancers(applyMiddleware(promise,thunk))
+  composeEnhancers(applyMiddleware(thunk, promise))
 )
 
 export { store }

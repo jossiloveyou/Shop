@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Swiper from '@/components/Swiper'
+import { Swiper } from '@@'
 import tu1 from '@/assets/tu1.png'
 import tu2 from '@/assets/tu2.png'
 
@@ -37,7 +37,7 @@ export default class Home extends Component {
           </div>
         </div>
         {
-          bannerData.length ? <Swiper data={bannerData}></Swiper> : null
+          bannerData.length ? <Swiper data={bannerData} /> : null
         }
       </div>
     )
