@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
-import { Form, Input, Button } from 'antd';
+import { Form, Input, Button } from 'antd'
+import { connect } from 'react-redux'
 import { Header, Icons } from '@@'
+import { memberReg } from '@/actions/reg'
 import api from '@/services/api'
 import './styles.less'
 
-export default @Form.create()
+export default @connect(state => ({}),{
+  memberReg,
+})
+@Form.create()
 
 class Reg extends Component {
 
@@ -16,7 +21,7 @@ class Reg extends Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        console.log('Received values of form: ', values)
+        this.props.memberReg(values)
       }
     })
   }
