@@ -6,14 +6,16 @@ import { memberLogin } from '@/actions/login'
 import './styles.less'
 
 export default @connect(state => ({
-  userInfo: state.login.userInfo
+  userInfo: state.login.userInfo,
+  code:  state.login.code
 }),{
   memberLogin,
 })
 @Form.create()
 
-class Login extends Component {
 
+class Login extends Component {
+  
   back = () => {//返回
     this.props.history.go(-1)
   }
@@ -24,14 +26,16 @@ class Login extends Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        const { memberLogin, userInfo } = this.props
-        memberLogin(values)
-          console.log(userInfo);
-        if(userInfo.uid){
-          console.log(1)
-        }else{
-          console.log(2)
-        }
+        const { memberLogin, code } = this.props
+        memberLogin(values)  
+        console.log(code);
+        setTimeout(function(){
+          if(code === 200){//2
+            console.log(1)
+          }else{
+            console.log(2)
+          }
+        },0)
       }
     })
   }
