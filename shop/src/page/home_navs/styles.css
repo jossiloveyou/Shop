@@ -1,0 +1,25 @@
+.navs {
+  width: 100%;
+  display: flex;
+  margin: 0.2rem 0;
+  background: white;
+}
+.navs dl {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.2rem;
+}
+.navs dl dt {
+  width: 40%;
+  padding: 0.1rem 0;
+  box-sizing: border-box;
+}
+.navs dl dt img {
+  width: 100%;
+}
+.navs dl dd {
+  margin: 0.1rem 0;
+}
