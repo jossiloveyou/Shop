@@ -21,7 +21,7 @@ export default class Nav extends React.Component{
         {
           navs.map((item,index)=>{
             return <dl key={index}>
-              <dt><img src= {item.image} ></img></dt>
+              <dt><img src= {item.image} alt="" ></img></dt>
               <dd>{item.title}</dd>
             </dl>
           })
