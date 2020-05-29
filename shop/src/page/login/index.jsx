@@ -6,6 +6,7 @@ import { memberLogin } from '@/actions/login'
 import './styles.less'
 
 export default @connect(state => ({
+  userInfo: state.login.userInfo
 }),{
   memberLogin,
 })
@@ -23,8 +24,14 @@ class Login extends Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        const { memberLogin } = this.props
+        const { memberLogin, userInfo } = this.props
         memberLogin(values)
+          console.log(userInfo);
+        if(userInfo.uid){
+          console.log(1)
+        }else{
+          console.log(2)
+        }
       }
     })
   }
