@@ -1,0 +1,10 @@
+.swiper-container,
+.swiper-wrapper,
+.swiper-slide {
+  width: 100%;
+}
+.swiper-container img,
+.swiper-wrapper img,
+.swiper-slide img {
+  width: 100%;
+}

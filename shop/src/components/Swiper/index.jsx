@@ -20,7 +20,8 @@ export default class index extends Component {
   render() {
     const {data} = this.props
     return (
-      <div className="Bnner swiper-container" ref={ this.banner }>
+
+      <div className="Bnner swiper-container" ref={ this.banner }> 
         <div className="swiper-wrapper">
           {
             data.map((item,index)=>{
