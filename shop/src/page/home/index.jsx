@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
+import HomeHeader from '@/page/home_header'
 import Swiper from '@/components/Swiper'
-import tu1 from '@/assets/tu1.png'
-import tu2 from '@/assets/tu2.png'
-import { Icon } from '@@'
 import { post } from '@/utils/request'
 import api from '@/services/api'
 import './styles.less'
@@ -24,18 +22,7 @@ export default class Home extends Component {
     let { bannerData, datas, data} = this.state
     return (
       <div className="home-box">
-        <div className="home-fd">
-          <div>
-            <Icon icons="fenlei"/>
-          </div>
-          <div>
-              <p><img src={tu2} ></img></p>
-              <input type="text" placeholder="输入喜欢的宝贝名称" ></input>
-          </div>
-          <div>
-              登录
-          </div>
-        </div>
+        <HomeHeader />
         {
           bannerData.length ? <Swiper data={bannerData}></Swiper> : null
         }
