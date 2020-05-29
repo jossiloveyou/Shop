@@ -10,7 +10,6 @@ import './styles.less'
 export default class Home extends Component {
   state={
     bannerData:[],
-    navs:[],
   }
   componentDidMount () {
     post(api.swipe).then(res => {
@@ -21,7 +20,7 @@ export default class Home extends Component {
     
   }
   render() {
-    let { bannerData, navs } = this.state
+    let { bannerData } = this.state
     return (
       <div className="home-box">
         <HomeHeader />
