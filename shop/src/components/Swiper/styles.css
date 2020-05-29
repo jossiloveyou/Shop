@@ -2,6 +2,7 @@
 .swiper-wrapper,
 .swiper-slide {
   width: 100%;
+  height: 3rem;
 }
 .swiper-container img,
 .swiper-wrapper img,

@@ -3,7 +3,7 @@ import Swiper from 'swiper'
 import 'swiper/css/swiper.min.css'
 import './styles.less'
 
-export default class index extends Component {
+export default class Swipe extends Component {
   componentDidMount(){
     new Swiper(this.refs.banner,{
         loop:true,
@@ -18,7 +18,8 @@ export default class index extends Component {
     })
   }
   render() {
-    const {data} = this.props
+    const { data } = this.props
+    console.log(data)
     return (
 
       <div className="Bnner swiper-container" ref="banner"> 
