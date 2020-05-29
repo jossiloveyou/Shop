@@ -5,7 +5,7 @@ import './styles.less'
 
 export default class index extends Component {
   componentDidMount(){
-    new Swiper(this.banner,{
+    new Swiper(this.refs.banner,{
         loop:true,
         autoplay:{
             disableOnInteraction:false,
@@ -21,7 +21,7 @@ export default class index extends Component {
     const {data} = this.props
     return (
 
-      <div className="Bnner swiper-container" ref={ this.banner }> 
+      <div className="Bnner swiper-container" ref="banner"> 
         <div className="swiper-wrapper">
           {
             data.map((item,index)=>{

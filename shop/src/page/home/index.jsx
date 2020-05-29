@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 
 import { Swiper } from '@@'
-import tu1 from '@/assets/tu1.png'
-import tu2 from '@/assets/tu2.png'
 
 import HomeHeader from '@/page/home_header'
 import { post } from '@/utils/request'
