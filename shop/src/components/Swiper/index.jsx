@@ -19,7 +19,6 @@ export default class Swipe extends Component {
   }
   render() {
     const { data } = this.props
-    console.log(data)
     return (
 
       <div className="Bnner swiper-container" ref="banner"> 

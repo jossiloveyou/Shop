@@ -24,14 +24,14 @@ class Login extends Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        const { memberLogin, userInfo } = this.props
-        memberLogin(values)
-          console.log(userInfo);
-        if(userInfo.uid){
-          console.log(1)
-        }else{
-          console.log(2)
-        }
+        const { memberLogin, userInfo } = this.props            
+
+        new Promise((resolve, reject) => {
+          resolve(memberLogin(values))
+        }).then(res => {
+          console.log(userInfo)  
+        })
+        
       }
     })
   }

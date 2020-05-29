@@ -9,7 +9,6 @@ export default class HomeRecommend extends Component {
   }
   componentDidMount () {
     post(api.recommend).then(res => {
-      console.log(res.data)
       this.setState({
         recommend: res.data
       })
