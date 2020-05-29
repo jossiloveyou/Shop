@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Swiper from '@/components/Swiper'
 import tu1 from '@/assets/tu1.png'
 import tu2 from '@/assets/tu2.png'
-
+import { Icon } from '@@'
 import { post } from '@/utils/request'
 import api from '@/services/api'
 import './styles.less'
@@ -26,7 +26,7 @@ export default class Home extends Component {
       <div className="home-box">
         <div className="home-fd">
           <div>
-              <img src={tu1} ></img>
+            <Icon icons="fenlei"/>
           </div>
           <div>
               <p><img src={tu2} ></img></p>
@@ -43,3 +43,4 @@ export default class Home extends Component {
     )
   }
 }
+

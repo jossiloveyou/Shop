@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Swiper from 'swiper'
 import 'swiper/css/swiper.min.css'
-
+import './styles.less'
 export default class index extends Component {
   componentDidMount(){
     new Swiper(this.refs.banner,{
@@ -19,7 +19,7 @@ export default class index extends Component {
   render() {
     const {data} = this.props
     return (
-      <div className="Bnner swiper-container">
+      <div className="Bnner swiper-container" ref="banner">
         <div className="swiper-wrapper">
           {
               data.map((item,index)=>{
