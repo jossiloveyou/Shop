@@ -24,19 +24,16 @@ class Login extends Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        const { memberLogin, userInfo } = this.props            
-
-        new Promise((resolve, reject) => {
-          resolve(memberLogin(values))
-        }).then(res => {
-          console.log(userInfo)  
-        })
-        
-        
+        const { memberLogin } = this.props            
+        memberLogin(values)
       }
     })
   }
-
+  componentWillReceiveProps(a){
+    if(a.userInfo.uid) {
+      this.back()
+    }
+  }
   render() {
     const { getFieldDecorator } = this.props.form
     return (
