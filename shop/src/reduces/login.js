@@ -10,12 +10,11 @@ export default function login (state = stateDefault, action) {
       console.log(action.payload);
       if(action.payload.code === 200){
         message.success("登录成功")
-        state.userInfo = action.payload.data        
+        return { ...state, userInfo: state.userInfo }       
       }else{
         message.error(action.payload.data)
-        state.userInfo = {}
+        return { ...state, userInfo: {} }
       }
-      return { ...state, userInfo: state.userInfo }
     default:
       return state
   }
