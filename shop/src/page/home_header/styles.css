@@ -9,6 +9,9 @@
   top: 0;
   z-index: 9999;
 }
+.home-header .anticon {
+  color: white;
+}
 .home-header div:nth-child(1) {
   width: 1rem;
   padding: 0 0.2rem;
