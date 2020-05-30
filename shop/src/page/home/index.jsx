@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-
 import { Swiper } from '@@'
-
 import HomeHeader from '@/page/home_header'
+import Navs from '@/page/home_navs'
+import Rec from '@/page/home_recommend'
 import { post } from '@/utils/request'
 import api from '@/services/api'
 import './styles.less'
@@ -10,8 +10,6 @@ import {Link, NavLink} from 'react-router-dom'
 export default class Home extends Component {
   state={
     bannerData:[],
-    datas:[],
-    data:[],
   }
   componentDidMount () {
     post(api.swipe).then(res => {
@@ -19,15 +17,18 @@ export default class Home extends Component {
         bannerData: res.data
       })
     })
+    
   }
   render() {
-    let { bannerData, datas, data} = this.state
+    let { bannerData } = this.state
     return (
       <div className="home-box">
         <HomeHeader />
         {
-          bannerData.length ? <Swiper data={bannerData} /> : null
+          bannerData.length ? <Swiper data={ bannerData } /> : null
         }
+        <Navs />
+        <Rec />
       </div>
     )
   }

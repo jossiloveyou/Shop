@@ -31,18 +31,25 @@ class Login extends Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        const { memberLogin, userInfo } = this.props
+        const { memberLogin } = this.props 
         memberLogin(values)
+<<<<<<< HEAD
         //   console.log(userInfo);
         // if(userInfo.uid){
         //   console.log(1)
         // }else{
         //   console.log(2)
         // }
+=======
+          .then(res => {
+            if(res.payload.code === 200){
+              this.back()
+            }
+          })
+>>>>>>> 16e9eb9d8f4f8ee193d2b52ddc0776b5242f1a63
       }
     })
   }
-
   render() {
     const { getFieldDecorator } = this.props.form
     
