@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import './styles.less'
 import { Icons } from '@@'
 import { get } from '@/utils/request'
 import api from '@/services/api'
 import { NavLink, Route, Redirect } from 'react-router-dom'
-import Item from './item'
+import Item from '../item'
+import './styles.less'
 //分类页
 export default class index extends Component {
   state={
@@ -19,7 +19,7 @@ export default class index extends Component {
     })
   }
   onClick = () => {
-    this.props.history.go(-1)
+    this.props.history.push('/home')
   }
   color=(id)=>{
     this.setState({
