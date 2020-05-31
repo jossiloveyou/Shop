@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import './styles.less'
+import { NavLink, Route, Redirect } from 'react-router-dom'
 import { Icons } from '@@'
 import { get } from '@/utils/request'
 import api from '@/services/api'
-import { NavLink, Route, Redirect } from 'react-router-dom'
 import Item from './item'
+import './styles.less'
 //分类页
 export default class index extends Component {
   state={
@@ -47,7 +47,7 @@ export default class index extends Component {
                   return <p key={i}>
                     <NavLink  to={`/classify/item/${v.cid}`}
                      onClick={()=>{this.color(i)}}
-                     className={index==i?'col':''}>
+                     className={index === i ? 'col' : ''}>
                       {v.title}
                     </NavLink>
                   </p>

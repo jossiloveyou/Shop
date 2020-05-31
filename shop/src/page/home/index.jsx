@@ -6,7 +6,7 @@ import Rec from '@/page/home_recommend'
 import { post } from '@/utils/request'
 import api from '@/services/api'
 import './styles.less'
-import {Link, NavLink} from 'react-router-dom'
+
 export default class Home extends Component {
   state={
     bannerData:[],

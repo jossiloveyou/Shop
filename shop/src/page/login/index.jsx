@@ -7,7 +7,6 @@ import './styles.less'
 
 export default @connect(state => ({
   userInfo: state.login.userInfo,
-  status: state.login.status
 }),{
   memberLogin,
 })
@@ -21,32 +20,18 @@ class Login extends Component {
   reg = () => {
     this.props.history.push('/reg')
   }
-  componentWillMount(){
-    console.log(this.props.status)
-    // if(this.props.status){
-    //   this.props.history.push('/')
-    // }
-  }
+
   handleSubmit = e => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
         const { memberLogin } = this.props 
         memberLogin(values)
-<<<<<<< HEAD
-        //   console.log(userInfo);
-        // if(userInfo.uid){
-        //   console.log(1)
-        // }else{
-        //   console.log(2)
-        // }
-=======
           .then(res => {
             if(res.payload.code === 200){
               this.back()
             }
           })
->>>>>>> 16e9eb9d8f4f8ee193d2b52ddc0776b5242f1a63
       }
     })
   }
