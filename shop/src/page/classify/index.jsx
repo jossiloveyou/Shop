@@ -19,7 +19,7 @@ export default class index extends Component {
     })
   }
   onClick = () => {
-    this.props.history.go(-1)
+    this.props.history.push('/home')
   }
   color=(id)=>{
     this.setState({

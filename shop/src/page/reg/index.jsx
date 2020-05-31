@@ -2,32 +2,55 @@ import React, { Component } from 'react'
 import { Form, Input, Button } from 'antd'
 import { connect } from 'react-redux'
 import { Header, Icons } from '@@'
-import { memberReg } from '@/actions/reg'
-import api from '@/services/api'
+import { memberReg, getCode } from '@/actions/reg'
 import './styles.less'
 
-export default @connect(state => ({}),{
+export default @connect(state => ({
+  vCode: state.reg.vCode
+}),{
   memberReg,
+  getCode,
 })
 @Form.create()
 
 class Reg extends Component {
 
+  constructor(props) {
+    super(props)
+    const { getCode } = this.props
+    getCode()
+  }
+  
+
   back = () => {
     this.props.history.go(-1)
+  }
+
+  code = () => {
+    console.log(1);
+    const { getCode } = this.props
+    getCode()
   }
 
   handleSubmit = e => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        this.props.memberReg(values)
+        const { memberReg } = this.props 
+        memberReg(values)
+          .then(res => {
+              if(res.payload.code === 200){
+                this.props.history.push('/login')
+              }
+          })
       }
     })
   }
 
   render() {
     const { getFieldDecorator } = this.props.form
+    const { vCode } = this.props
+    console.log(vCode);
     return (
       <div className="reg-box">
         <Header title="注册" back={this.back}/>
@@ -39,7 +62,7 @@ class Reg extends Component {
               })(
                 <Input 
                   placeholder="验证码"
-                  prefix={<img src={api.vcode} alt=""/>}
+                  prefix={<img src={vCode} alt="" onClick={this.code} />}
                 />,
               )}
             </Form.Item>

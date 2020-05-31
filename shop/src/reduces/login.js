@@ -1,5 +1,5 @@
-import { FETCH_LOGIN } from '@/constants/actionTypes'
 import { message } from 'antd'
+import { FETCH_LOGIN } from '@/constants/actionTypes'
 const stateDefault = {
   userInfo: {},
 }
