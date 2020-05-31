@@ -1,9 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { NavLink, Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { pathRoute } from '@/actions/login'
 import { Icons } from '@@'
 import './styles.less'
-import { NavLink } from 'react-router-dom'
 
-export default class HomeHeader extends Component {
+export default @connect(state => ({}),{
+  pathRoute,
+})
+
+class HomeHeader extends Component {
+  clk = () => {
+    this.props.pathRoute(this.props.path)
+  }
   render() {
     return (
       <div className="home-header">
@@ -13,10 +22,10 @@ export default class HomeHeader extends Component {
           </div>
           <div>
               <p><Icons icons="sousuo"/></p>
-              <input type="text" placeholder="输入喜欢的宝贝名称" ></input>
+              <Link to="/serach"><input type="text" placeholder="输入喜欢的宝贝名称" ></input></Link>
           </div>
           <div>
-              登录
+              <NavLink to="/login" onClick={this.clk} >登录</NavLink> 
           </div>
       </div>
     );

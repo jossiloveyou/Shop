@@ -1,9 +1,10 @@
-import { FETCH_LOGIN } from '@/constants/actionTypes'
 import { message } from 'antd'
 import _ from 'loadsh'
+import { FETCH_LOGIN, FETCH_PATH, FETCH_SIGN_OUT } from '@/constants/actionTypes'
 const stateDefault = {
   userInfo: {},
-  status: false
+  pathRoute: '',
+  isLogin: false,
 }
 
 export default function login (state = stateDefault, action) {
@@ -14,11 +15,18 @@ export default function login (state = stateDefault, action) {
         obj = action.payload.data   
         message.success("登录成功")
         return { ...state, ...{userInfo: _.cloneDeep(action.payload.data), status: true}}   
+        obj = action.payload.data  
+        state.isLogin = true 
+        message.success("登录成功")     
       }else{
         obj = {}   
         message.error(action.payload.data)
       }
-      return { ...state, userInfo: obj }    
+      return { ...state, userInfo: obj, isLogin: state.isLogin }  
+    case FETCH_PATH:
+      return { ...state, pathRoute: action.payload }  
+    case FETCH_SIGN_OUT:
+      return { ...state, userInfo: {}, isLogin: false }
     default:
       return state
   }

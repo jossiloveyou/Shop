@@ -24,7 +24,10 @@
 .classify_box .classify_top > div:nth-child(2) {
   flex: 1;
 }
-.classify_box .classify_top > div:nth-child(2) input {
+.classify_box .classify_top > div:nth-child(2) a {
+  width: 100%;
+}
+.classify_box .classify_top > div:nth-child(2) a input {
   width: 100%;
   outline: 0;
   border: 1px solid #BCBCBC;

@@ -7,4 +7,5 @@ export const Cart = Loadable (() => import('@/page/cart'))
 export const My = Loadable (() => import('@/page/my'))
 export const Hs = Loadable(() => import('@/layout/homeSwitch'))
 export const Classify = Loadable(() => import('@/page/classify'))
+export const Serach = Loadable(() => import('@/page/serach'))
 

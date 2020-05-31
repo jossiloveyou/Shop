@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-import { Header, Icons } from '@@'
+import { connect } from 'react-redux'
+import { Header, Icons, Modal } from '@@'
+import { pathRoute, signOut } from '@/actions/login'
 import myTu1 from '@/assets/my-tu1.png'
 import myTu2 from '@/assets/my-tu2.png'
 import myTu3 from '@/assets/my-tu3.png'
-
 import './styless.less'
+
 const orderForm = [
   {
     img: myTu1,
@@ -29,14 +31,65 @@ const msg = [
   {name: '我的收藏',qita: <Icons icons="youjiantou"/>,id: 5},
 ]
 
-export default class My extends Component {
+export default @connect(state => ({
+  userInfo: state.login.userInfo,
+  isLogin: state.login.isLogin,
+}),{
+  pathRoute,
+  signOut,
+})
+
+class My extends Component {
+
+  state = {
+    visible: false
+  }
+
   onClick = () => {
-    this.props.history.go(-1)
+    this.props.history.push('/home')
   }
   logins = () => {
+    this.props.pathRoute(this.props.match.path)
     this.props.history.push('/login')
   }
+
+  out = () => {
+    this.setState({
+      visible: true
+    })
+  }
+
+  logOut = () => {
+    this.setState({
+      visible: false
+    })
+    const { signOut, userInfo } = this.props
+    signOut({ uid: userInfo.uid })
+    this.props.history.push('/login')
+  }
+
+  tz = () => {//模板
+    console.log(1)
+  }
+
+  judgeLogin = (fn) => {
+    const { isLogin } = this.props
+    if(isLogin) {
+      this.props.history.push('/login') 
+    }else{
+      switch(fn) {
+        case 1:
+          this.tz()
+          break
+        default:
+          break
+      }
+    }
+  }
+
   render() {
+    const { visible } =this.state
+    const { isLogin } = this.props
     return (
       <div className="my">
         <Header back={this.onClick} title="会员中心" />
@@ -68,7 +121,7 @@ export default class My extends Component {
           <div className="my-msg">
             {
               msg.map(item => {
-                return <p key={item.id}>
+                return <p key={item.id} onClick={() => this.judgeLogin(1)}>
                   <span>{item.name}</span>
                   <span>{item.qita}</span>
                 </p>
@@ -76,9 +129,15 @@ export default class My extends Component {
             }
           </div>
           <div className="my-but">
-            <button onClick={this.logins}>登录/注册</button>
+            {
+              isLogin ?
+              <button onClick={this.out}>安全退出</button> 
+              : 
+              <button onClick={this.logins}>登录/注册</button>
+            }
           </div>
         </div>
+        <Modal visible={visible} fn={this.logOut}  />
       </div>
     )
   }

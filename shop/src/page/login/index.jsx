@@ -7,7 +7,7 @@ import './styles.less'
 
 export default @connect(state => ({
   userInfo: state.login.userInfo,
-  status: state.login.status
+  pathRoute: state.login.pathRoute,
 }),{
   memberLogin,
 })
@@ -16,17 +16,13 @@ export default @connect(state => ({
 class Login extends Component {
 
   back = () => {//返回
-    this.props.history.go(-1)
+    const { pathRoute } = this.props
+    this.props.history.push(pathRoute)
   }
   reg = () => {
     this.props.history.push('/reg')
   }
-  componentWillMount(){
-    console.log(this.props.status)
-    // if(this.props.status){
-    //   this.props.history.push('/')
-    // }
-  }
+
   handleSubmit = e => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
