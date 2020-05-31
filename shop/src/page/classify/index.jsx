@@ -3,7 +3,7 @@ import { NavLink, Route, Redirect } from 'react-router-dom'
 import { Icons } from '@@'
 import { get } from '@/utils/request'
 import api from '@/services/api'
-import Item from './item'
+import Item from '@/page/item'
 import './styles.less'
 //分类页
 export default class index extends Component {
