@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { NavLink, Route, Redirect } from 'react-router-dom'
+import { NavLink, Route, Redirect, Link } from 'react-router-dom'
 import { Icons } from '@@'
 import { get } from '@/utils/request'
 import api from '@/services/api'
@@ -36,7 +36,7 @@ export default class index extends Component {
               <Icons icons="fanhui" />
             </div>
             <div>
-              <input type="text" placeholder="请输入宝贝名称"/>
+            <Link to="/serach"><input type="text" placeholder="请输入宝贝名称"/></Link>
             </div>
           </div>
 
@@ -47,7 +47,7 @@ export default class index extends Component {
                   return <p key={i}>
                     <NavLink  to={`/classify/item/${v.cid}`}
                      onClick={()=>{this.color(i)}}
-                     className={index === i ? 'col' : ''}>
+                     className={index==i?'col':''}>
                       {v.title}
                     </NavLink>
                   </p>

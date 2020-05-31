@@ -29,6 +29,12 @@ class Login extends Component {
       if (!err) {
         const { memberLogin } = this.props 
         memberLogin(values)
+        //   console.log(userInfo);
+        // if(userInfo.uid){
+        //   console.log(1)
+        // }else{
+        //   console.log(2)
+        // }
           .then(res => {
             if(res.payload.code === 200){
               this.back()

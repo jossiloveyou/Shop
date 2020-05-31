@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { pathRoute } from '@/actions/login'
 import { Icons } from '@@'
@@ -22,7 +22,7 @@ class HomeHeader extends Component {
           </div>
           <div>
               <p><Icons icons="sousuo"/></p>
-              <input type="text" placeholder="输入喜欢的宝贝名称" ></input>
+              <Link to="/serach"><input type="text" placeholder="输入喜欢的宝贝名称" ></input></Link>
           </div>
           <div>
               <NavLink to="/login" onClick={this.clk} >登录</NavLink> 
