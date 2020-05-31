@@ -7,6 +7,5 @@ export default {
   goods: '/aps/api/home/index/goodsLevel?token=1ec949a15fb709370f', //商品
   recommend: '/aps/api/home/index/recom?token=1ec949a15fb709370f', //推荐
   classify:'http://vueshop.glbuys.com/api/home/category/menu?token=1ec949a15fb709370f',//分类左侧
-
 }
 

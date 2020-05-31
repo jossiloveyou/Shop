@@ -6,7 +6,7 @@ import Rec from '@/page/home_recommend'
 import { post } from '@/utils/request'
 import api from '@/services/api'
 import './styles.less'
-import {Link, NavLink} from 'react-router-dom'
+
 export default class Home extends Component {
   state={
     bannerData:[],
@@ -20,10 +20,11 @@ export default class Home extends Component {
     
   }
   render() {
-    let { bannerData } = this.state
+    const { bannerData } = this.state
+    const { path } = this.props.match
     return (
       <div className="home-box">
-        <HomeHeader />
+        <HomeHeader path={path} />
         {
           bannerData.length ? <Swiper data={ bannerData } /> : null
         }

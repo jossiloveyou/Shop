@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { Header, Icons } from '@@'
+import { pathRoute } from '@/actions/login'
 import myTu1 from '@/assets/my-tu1.png'
 import myTu2 from '@/assets/my-tu2.png'
 import myTu3 from '@/assets/my-tu3.png'
-
 import './styless.less'
+
 const orderForm = [
   {
     img: myTu1,
@@ -29,11 +31,16 @@ const msg = [
   {name: '我的收藏',qita: <Icons icons="youjiantou"/>,id: 5},
 ]
 
-export default class My extends Component {
+export default @connect(state => ({}),{
+  pathRoute,
+})
+
+class My extends Component {
   onClick = () => {
-    this.props.history.go(-1)
+    this.props.history.push('/home')
   }
   logins = () => {
+    this.props.pathRoute(this.props.match.path)
     this.props.history.push('/login')
   }
   render() {

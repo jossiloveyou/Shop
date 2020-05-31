@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Switch, Route, NavLink, Redirect } from 'react-router-dom'
-import { Home,Classify } from '@/routers/assembly'
+import { Home } from '@/routers/assembly'
 import { Icons } from '@@'
 import './styles.less'
 
