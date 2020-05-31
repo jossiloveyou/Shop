@@ -47,7 +47,7 @@ export default class index extends Component {
                   return <p key={i}>
                     <NavLink  to={`/classify/item/${v.cid}`}
                      onClick={()=>{this.color(i)}}
-                     className={index==i?'col':''}>
+                     className={index === i ? 'col' : ''}>
                       {v.title}
                     </NavLink>
                   </p>

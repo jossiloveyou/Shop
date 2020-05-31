@@ -1,16 +1,17 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+import { get } from '@/utils/request'
 import './styles.less'
-
+import api from '@/services/api'
 export default class index extends Component {
   state={
     rightData:[]
   }
   componentWillReceiveProps(nextProps){
       let id=nextProps.match.params.id
-      axios.get('http://vueshop.glbuys.com/api/home/category/show?cid='+id+'&token=1ec949a15fb709370f').then(res=>{
+      get(api.cid+id+'&token=1ec949a15fb709370f')
+      .then(res=>{
           this.setState({
-            rightData:res.data.data
+            rightData:res.data
           })
       })
   }
