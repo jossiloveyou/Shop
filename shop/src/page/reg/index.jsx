@@ -17,8 +17,9 @@ class Reg extends Component {
 
   constructor(props) {
     super(props)
+    const myDate = new Date()
     const { getCode } = this.props
-    getCode()
+    getCode(myDate.getTime())
   }
   
 
@@ -27,9 +28,9 @@ class Reg extends Component {
   }
 
   code = () => {
-    console.log(1);
+    const myDate = new Date()
     const { getCode } = this.props
-    getCode()
+    getCode(myDate.getTime())
   }
 
   handleSubmit = e => {
@@ -50,7 +51,6 @@ class Reg extends Component {
   render() {
     const { getFieldDecorator } = this.props.form
     const { vCode } = this.props
-    console.log(vCode);
     return (
       <div className="reg-box">
         <Header title="注册" back={this.back}/>

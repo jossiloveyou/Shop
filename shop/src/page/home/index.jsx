@@ -20,10 +20,11 @@ export default class Home extends Component {
     
   }
   render() {
-    let { bannerData } = this.state
+    const { bannerData } = this.state
+    const { path } = this.props.match
     return (
       <div className="home-box">
-        <HomeHeader />
+        <HomeHeader path={path} />
         {
           bannerData.length ? <Swiper data={ bannerData } /> : null
         }

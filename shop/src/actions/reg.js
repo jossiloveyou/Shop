@@ -12,6 +12,6 @@ export function memberReg (options) {
 export function getCode (options) {
   return {
     type: FETCH_CODE,
-    payload: api.vcode
+    payload: `${api.vcode}&nowtime=${options}`
   }
 }

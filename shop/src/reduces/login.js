@@ -1,7 +1,8 @@
 import { message } from 'antd'
-import { FETCH_LOGIN } from '@/constants/actionTypes'
+import { FETCH_LOGIN, FETCH_PATH } from '@/constants/actionTypes'
 const stateDefault = {
   userInfo: {},
+  pathRoute: ''
 }
 
 export default function login (state = stateDefault, action) {
@@ -15,7 +16,9 @@ export default function login (state = stateDefault, action) {
         obj = {}   
         message.error(action.payload.data)
       }
-      return { ...state, userInfo: obj }    
+      return { ...state, userInfo: obj }  
+    case FETCH_PATH:
+      return { ...state, pathRoute: action.payload }  
     default:
       return state
   }
