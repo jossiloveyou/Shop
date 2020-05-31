@@ -11,11 +11,7 @@ export default function login (state = stateDefault, action) {
       let obj = {}
       if(action.payload.code === 200){
         obj = action.payload.data   
-<<<<<<< HEAD
-        message.success("登录成功")
-=======
         message.success("登录成功")     
->>>>>>> f86f5b1f1f4911be5ac849dc3535b6e2ef012fb8
       }else{
         obj = {}   
         message.error(action.payload.data)
