@@ -19,7 +19,7 @@ export default class index extends Component {
     //     serach: res
     //   })
     // })
-    axios.get('http://localhost/api/home/goods/param?kwords=连衣裙&token=1ec949a15fb709370f').then(res=>{
+    axios.get('http://vueshop.glbuys.com/api/home/goods/param?kwords=连衣裙&token=1ec949a15fb709370f').then(res=>{
       this.setState({
         serach: res
       })
