@@ -1,6 +1,4 @@
 export const FORM_DATA = 'FORM_DATA'
-export const FETCH_LOGIN = 'FETCH_LOGIN'
-export const FETCH_REG = 'FETCH_REG'
 
 //购物车的删除添加
 export const FETCH_ADD = 'FETCH_ADD'

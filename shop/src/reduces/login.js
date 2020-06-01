@@ -1,5 +1,4 @@
 import { message } from 'antd'
-import _ from 'loadsh'
 import { FETCH_LOGIN, FETCH_PATH, FETCH_SIGN_OUT } from '@/constants/actionTypes'
 const stateDefault = {
   userInfo: {},
@@ -11,10 +10,7 @@ export default function login (state = stateDefault, action) {
   switch (action.type) {
     case FETCH_LOGIN:
       let obj = {}
-      if(action.payload.code === 200){
-        obj = action.payload.data   
-        message.success("登录成功")
-        return { ...state, ...{userInfo: _.cloneDeep(action.payload.data), status: true}}   
+      if(action.payload.code === 200){ 
         obj = action.payload.data  
         state.isLogin = true 
         message.success("登录成功")     

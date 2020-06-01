@@ -13,20 +13,7 @@ export default class index extends Component {
     serach:[]
   }
   componentDidMount () {
-<<<<<<< HEAD
-    // get(api.serach).then(res => {
-    //   this.setState({
-    //     serach: res
-    //   })
-    // })
-    axios.get('http://vueshop.glbuys.com/api/home/goods/param?kwords=连衣裙&token=1ec949a15fb709370f').then(res=>{
-      this.setState({
-        serach: res
-      })
-    })
-=======
-   
->>>>>>> 9accfedcd9f257e5de769d85f9101b2f85563a84
+    
   }
   render() {
     const { serach } =this.state
