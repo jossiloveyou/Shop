@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import { Input, Icon } from 'antd';
 import './styles.less'
-import { get } from '@/utils/request'
-import api from '@/services/api'
-import axios from 'axios'
+// import { get } from '@/utils/request'
+// import api from '@/services/api'
 const { Search } = Input 
 
 export default class index extends Component {
@@ -14,6 +13,7 @@ export default class index extends Component {
     serach:[]
   }
   componentDidMount () {
+<<<<<<< HEAD
     // get(api.serach).then(res => {
     //   this.setState({
     //     serach: res
@@ -24,9 +24,12 @@ export default class index extends Component {
         serach: res
       })
     })
+=======
+   
+>>>>>>> 9accfedcd9f257e5de769d85f9101b2f85563a84
   }
   render() {
-    const { serach } =this.props
+    const { serach } =this.state
     console.log(serach)
     return (
        <div className="search">

@@ -1,4 +1,11 @@
 export const FORM_DATA = 'FORM_DATA'
+export const FETCH_LOGIN = 'FETCH_LOGIN'
+export const FETCH_REG = 'FETCH_REG'
+
+//购物车的删除添加
+export const FETCH_ADD = 'FETCH_ADD'
+export const FETCH_DEL = 'FETCH_DEL'
+
 export const FETCH_LOGIN = 'FETCH_LOGIN' //登录
 export const FETCH_REG = 'FETCH_REG' //注册
 export const FETCH_CODE = 'FETCH_CODE' //验证码
