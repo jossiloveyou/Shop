@@ -75,8 +75,6 @@ class My extends Component {
   judgeLogin = (fn) => {
     const { isLogin } = this.props
     if(isLogin) {
-      this.props.history.push('/login') 
-    }else{
       switch(fn) {
         case 1:
           this.tz()
@@ -84,6 +82,8 @@ class My extends Component {
         default:
           break
       }
+    }else{
+      this.props.history.push('/login') 
     }
   }
 
