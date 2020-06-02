@@ -8,4 +8,5 @@ export const My = Loadable (() => import('@/page/my'))
 export const Hs = Loadable(() => import('@/layout/homeSwitch'))
 export const Classify = Loadable(() => import('@/page/classify'))
 export const Serach = Loadable(() => import('@/page/serach'))
+export const Product = Loadable(() => import('@/page/product'))
 

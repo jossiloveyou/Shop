@@ -14,6 +14,10 @@ export default class HomeRecommend extends Component {
       })
     })
   }
+  tz (gid) {
+    console.log(gid)
+    
+  }
   render() {
     const { recommend } = this.state
     return (
@@ -22,7 +26,7 @@ export default class HomeRecommend extends Component {
         <div className="good">
           {
             recommend.length ? recommend.map(item => {
-              return <dl key={item.gid}>
+              return <dl key={item.gid} onClick={() => this.tz(item.gid)}>
                 <dt><img src={item.image} alt=""/></dt>
                 <dd>
                   <p>{item.title}</p>

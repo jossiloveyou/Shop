@@ -10,5 +10,6 @@ export default {
   classify:'/aps/api/home/category/menu?token=1ec949a15fb709370f',//分类左侧
   cid:'/aps/api/home/category/show?cid=',
   serach:'/aps/api/home/public/hotwords?token=1ec949a15fb709370f',
+  product: 'http://localhost/api/home/goods/info?gid='//详情
 }
 
