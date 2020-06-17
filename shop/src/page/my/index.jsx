@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { NavLink } from 'react-router-dom'
 import { Header, Icons, Modal } from '@@'
 import { pathRoute, signOut } from '@/actions/login'
 import myTu1 from '@/assets/my-tu1.png'
@@ -11,14 +12,17 @@ const orderForm = [
   {
     img: myTu1,
     name: '待支付',
+    order: '/my/pay',
     id: 1,
   },{
     img: myTu2,
     name: '待收货',
+    order: '/my/receipt',
     id: 2
   },{
     img: myTu3,
     name: '待评价',
+    order: '/my/evaluate',
     id: 3
   },
 ]
@@ -104,15 +108,23 @@ class My extends Component {
           <div className="my-order-form">
             <p>
               <span>全部订单</span>
-              <span>查看全部订单 <Icons icons="youjiantou"/></span>
+              <span>
+                <NavLink to="/my/allOrder">
+                  查看全部订单 <Icons icons="youjiantou"/>
+                </NavLink>
+              </span>
             </p>
             <div>
               {
                 orderForm.map(item => {
-                  return <dl key={item.id}>
-                      <dt><img src={item.img} alt=""/></dt>
-                      <dd>{item.name}</dd>
+                  return(
+                    <dl key={item.id}>
+                      <NavLink to={item.order}>
+                        <dt><img src={item.img} alt=""/></dt>
+                        <dd>{item.name}</dd>
+                      </NavLink>
                     </dl>
+                  )
                 })
               }
             </div>

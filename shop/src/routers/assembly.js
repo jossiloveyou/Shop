@@ -9,4 +9,9 @@ export const Hs = Loadable(() => import('@/layout/homeSwitch'))
 export const Classify = Loadable(() => import('@/page/classify'))
 export const Serach = Loadable(() => import('@/page/serach'))
 export const Product = Loadable(() => import('@/page/product'))
+export const AllOrder = Loadable(() => import('@/page/order/allOrder'))
+export const Evaluate = Loadable(() => import('@/page/order/evaluate'))
+export const Pay = Loadable(() => import('@/page/order/pay'))
+export const Receipt = Loadable(() => import('@/page/order/receipt'))
+
 

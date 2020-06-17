@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import { Login, Hs, Cart, My, Reg, Classify, Serach, Product } from './assembly'
+import { Login, Hs, Cart, My, Reg, Classify, Serach, Product, Receipt, Pay, Evaluate, AllOrder } from './assembly'
 import '@/styles/reset.css'
 
 export default class Routers extends Component {
@@ -8,6 +8,10 @@ export default class Routers extends Component {
     return (
      <BrowserRouter>
       <Switch>
+        <Route path="/my/receipt" component={Receipt}/>
+        <Route path="/my/pay" component={Pay}/>
+        <Route path="/my/evaluate" component={Evaluate}/>
+        <Route path="/my/allOrder" component={AllOrder}/>
         <Route path="/goods/product/:id" component={Product}/>
         <Route path="/serach" component={Serach}/>
         <Route path="/classify" component={Classify}/>
