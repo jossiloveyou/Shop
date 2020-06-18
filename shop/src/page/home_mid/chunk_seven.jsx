@@ -22,7 +22,6 @@ export default class Chunk_seven extends Component {
   }
   render() {
     const { item } = this.props
-    console.log(item)
     return (
       <div className='chunk_seven'>
         <p>{item.title}</p>

@@ -28,6 +28,7 @@ export default class index extends Component {
   }
   render() {
     const { classify, index } = this.state
+    // console.log(this.props)
     return (
       <div className="classify_box">
 
@@ -56,7 +57,7 @@ export default class index extends Component {
             </div>
             <div className="classify_right">
                 <Route path="/classify/item/:id" component={Item}/>
-                <Redirect from="/classify/item" to="/classify/item/:492" />
+                <Redirect from="/classify/item" to="/classify/item/492" />
             </div>
           </div>
 

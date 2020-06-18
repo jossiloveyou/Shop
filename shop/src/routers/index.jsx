@@ -12,8 +12,8 @@ export default class Routers extends Component {
         <Route path="/my/pay" component={Pay}/>
         <Route path="/my/evaluate" component={Evaluate}/>
         <Route path="/my/allOrder" component={AllOrder}/>
-        <Route path="/goods/product/:id" component={Product}/>
         <Route path="/serach" component={Serach}/>
+        <Route path="/product/:id" component={Product}/>
         <Route path="/classify" component={Classify}/>
         <Route path="/cart" component={Cart}/>
         <Route path="/my" component={My}/>

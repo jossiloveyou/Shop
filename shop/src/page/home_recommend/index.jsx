@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom'
 import { post } from '@/utils/request'
 import api from '@/services/api'
 import './styles.less'
@@ -14,25 +15,25 @@ export default class HomeRecommend extends Component {
       })
     })
   }
-  tz (gid) {
-    console.log(gid)
-    
-  }
+
   render() {
     const { recommend } = this.state
+    console.log(recommend)
     return (
       <div className='home-goods'>
         <p>为您推荐</p>
         <div className="good">
           {
             recommend.length ? recommend.map(item => {
-              return <dl key={item.gid} onClick={() => this.tz(item.gid)}>
-                <dt><img src={item.image} alt=""/></dt>
-                <dd>
-                  <p>{item.title}</p>
-                  <p>￥{item.price}</p>
-                </dd>
-              </dl>
+              return <NavLink key={item.gid} to={`/product/${item.gid}`} >
+                <dl>
+                  <dt><img src={item.image} alt=""/></dt>
+                  <dd>
+                    <p>{item.title}</p>
+                    <p>￥{item.price}</p>
+                  </dd>
+                </dl>
+              </NavLink>
             }) : undefined
           }
         </div>

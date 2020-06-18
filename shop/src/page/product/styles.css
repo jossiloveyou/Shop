@@ -1,0 +1,51 @@
+.xiang {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.xiang .xiang-header {
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  line-height: 1rem;
+}
+.xiang .xiang-header p:nth-child(1) {
+  width: 1rem;
+  font-size: 0.4rem;
+}
+.xiang .xiang-header p:nth-child(2) {
+  flex: 1;
+  display: flex;
+}
+.xiang .xiang-header p:nth-child(2) span {
+  flex: 1;
+  text-align: center;
+  font-size: 0.3rem;
+}
+.xiang .xiang-foot {
+  width: 100%;
+  height: 1rem;
+  line-height: 1rem;
+  display: flex;
+}
+.xiang .xiang-foot button {
+  flex: 1;
+  font-size: 0.3rem;
+  color: white;
+  border: 0;
+}
+.xiang .xiang-foot button:nth-child(1) {
+  background: yellow;
+}
+.xiang .xiang-foot button:nth-child(2) {
+  background: red;
+}
+.xiang .jia {
+  width: 100%;
+  overflow: auto;
+}
+.xiang .good {
+  width: 100%;
+  overflow: auto;
+}

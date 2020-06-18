@@ -7,6 +7,7 @@ export default class index extends Component {
     rightData:[]
   }
   componentWillReceiveProps(nextProps){
+      // console.log(nextProps)
       let id=nextProps.match.params.id
       get(api.cid+id+'&token=1ec949a15fb709370f')
       .then(res=>{
