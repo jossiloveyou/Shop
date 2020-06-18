@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 import { get } from '@/utils/request'
 import './styles.less'
 import api from '@/services/api'
+
 export default class index extends Component {
   state={
     rightData:[]
@@ -28,10 +30,12 @@ export default class index extends Component {
                       {
                           v.goods==null?'暂无数据': v.goods.map((v,i)=>{
                           return  <dl key={i}>
+                            <NavLink to={`/product/${v.gid}`}>
                               <dt>
                                   <img src={v.image} alt=""/>
                               </dt>
                               <dd>{v.title}</dd>
+                              </NavLink>
                           </dl>
                           })
                       }

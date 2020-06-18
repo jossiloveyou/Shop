@@ -1,26 +1,42 @@
 import React, { Component } from 'react'
 import { Input, Icon } from 'antd';
+import api from '@/services/api'
 import './styles.less'
-// import { get } from '@/utils/request'
-// import api from '@/services/api'
-
 import Swipe from '@@/Swiper'
+
 const { Search } = Input 
 
 export default class Xiang extends Component {
+  state={
+    val:0,
+    a: '<',
+    data: {},
+    img: []
+  }
+
   fn = () => {
     this.props.history.go(-1)
   }
-  state={
-    val:0,
-    a: '<'
-  }
+
   componentDidMount () {
     const id = this.props.match.params.id
+    api.product(id)
+      .then(res => {
+        this.setState({
+          data: res.data,
+          img: res.data.images
+        })
+      })
+    api.pingjia(id)
+      .then(res => {
+        this.setState({
+          pingjia: res.data
+        })
+      })
   }
 
   add = () => {
-    //加入购物车的reducer
+    
   }
 
   dian = value => {
@@ -30,8 +46,7 @@ export default class Xiang extends Component {
   }
 
   render() {
-    const { val, a } =this.state
-    // console.log(serach)
+    const { val, a, data, img, pingjia } =this.state
     return (
        <div className="xiang">
         <div className="xiang-header">
@@ -45,31 +60,36 @@ export default class Xiang extends Component {
         {
           val==0?<div className="good">
               <div className="xiang-swiper">
-                {/* <Swipe data={}/> */}
+                {
+                  img.length > 0 ? <Swipe data={img}/> : null
+                }
               </div>
-              <p>{'数据就是title'}</p>
-              <p>{'price'}</p>
+              <p>{data.title}</p>
+              <p>{data.price}</p>
             </div>:null
         }
         {
           val==1?<div>
               
-              <p>{'数据就是title'}</p>
-              <p>{'数据就是title'}</p>
+              <p>{data.bodys}</p>
               {/*图片就不放了,直接把文字放上去，放两行*/}
             </div>:null
         }
         {
           val==2?<div className="jia">
-              <p>商品评价{/*数据的长度 */}</p> 
+              <p>商品评价{pingjia.length}</p> 
               {
                 /*吧评价的数据放这,data改改 */
-                /* data.map((v,i) => {
+                pingjia.length > 0 ? pingjia.map((v,i) => {
+                  console.log(v)
                   return <dl>
-                    <dt>{v.name}</dt>
-                    <dd>{v.title}</dd>
+                    <dt>{v.nickname}</dt>
+                    <dd>
+                      <p>{v.content}</p>
+                      <p>{v.times}</p>
+                    </dd>
                   </dl>
-                }) */
+                }) : null
               }
             </div>:null
         }

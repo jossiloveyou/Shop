@@ -18,7 +18,6 @@ export default class HomeRecommend extends Component {
 
   render() {
     const { recommend } = this.state
-    console.log(recommend)
     return (
       <div className='home-goods'>
         <p>为您推荐</p>

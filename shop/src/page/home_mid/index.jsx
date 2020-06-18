@@ -23,7 +23,6 @@ export default class HomeMid extends Component {
       <div>
         {
           data.length > 0 ? data.map( (item, index) =>{
-            
             return item.items.length == 6 ? <Six key={index} item={item} /> : <Seven key={index} item={item} />
           }) : null
         }

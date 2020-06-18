@@ -1,3 +1,5 @@
+import { get } from '@/utils/request'
+
 export default {
   vcode: '/aps/api/vcode/chkcode?token=1ec949a15fb709370f', //验证码
   reg: '/aps/api/home/user/reg?token=1ec949a15fb709370f', //注册
@@ -10,7 +12,8 @@ export default {
   classify:'/aps/api/home/category/menu?token=1ec949a15fb709370f',//分类左侧
   cid:'/aps/api/home/category/show?cid=',
   serach:'/aps/api/home/public/hotwords?token=1ec949a15fb709370f',
-  product: 'http://localhost/api/home/goods/info?gid=', //详情
+  product: opt => get(`/aps/api/home/goods/info?gid=${opt}&type=details&token=1ec949a15fb709370f`), //详情
+  pingjia: opt => get(`/aps/api/home/reviews/index?gid=${opt}&token=1ec949a15fb709370f&page=1`), //评价
   hometype: 'http://vueshop.glbuys.com/api/home/index/goodsLevel?token=1ec949a15fb709370f', //首页产品
 }
 

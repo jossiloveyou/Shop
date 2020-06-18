@@ -1,23 +1,32 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 import './stylesTwo.less'
 
 export default class Chunk_seven extends Component {
   fn = (item, index) => {
     if (index <= 2) {
-      return (<dl key={item.gid}>
-        <dt><p>{item.title}</p></dt>
-        <dd><img src={item.image} /></dd>
-      </dl>)
+      return (
+        <dl key={item.gid}>
+          <NavLink to={`/product/${item.gid}`} >
+          <dt><p>{item.title}</p></dt>
+          <dd><img src={item.image} /></dd>
+          </NavLink>
+        </dl>
+      )
     }else{
-      return (<dl key={item.gid}>
-        <dt>
-          <p>{item.title}</p>
-        </dt>
-        <dd>
-          <img src={item.image} />
-          <p>{item.price}</p>
-        </dd>
-      </dl>)
+      return (
+        <dl  key={item.gid}>
+          <NavLink to={`/product/${item.gid}`} >
+          <dt>
+            <p>{item.title}</p>
+          </dt>
+          <dd>
+            <img src={item.image} />
+            <p>{item.price}</p>
+          </dd>
+          </NavLink>
+        </dl>
+      )
     }
   }
   render() {
